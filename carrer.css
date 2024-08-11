@@ -1,0 +1,118 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* styling for the first section */
+#first_sec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+/* styling for the first sections div */
+.first_sec_div{
+    flex-basis: 45%;
+    margin: 20px;
+   
+    height: auto;
+}
+.button{
+    height: 50px;
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: white;
+    color: purple;
+    font-weight: bolder;
+}
+#image1{
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+
+}
+#sbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#sbox p{
+    font-size: 20px;
+    text-align: justify;
+}
+/* second div styling */
+#second_sec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+/* styling for the course datailing box */
+.second_sec_div{
+    flex-basis: 45%;
+    margin: 20px;
+    min-height: 40vh;
+    height: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+/* carrer box */
+.cbox{
+    display: flex ;
+    justify-content:space-between;
+}
+.second_sec_div p{
+    padding-top: 10px;
+}
+span{
+    color: purple;
+ }
+/* responsive */
+
+@media (max-width: 768px) {
+    .first_sec_div {
+      flex-basis: 50%;
+      margin: 10px;
+    }
+    
+  }
+  
+  @media (max-width: 480px) {
+    .first_sec_div {
+      flex-basis: 100%;
+      margin: 10px;
+    }
+    #sbox p{
+        font-size: 25px;
+        text-align: justify;
+    }
+    #sbox h1{
+        font-weight: 700;
+        font-size: 30px;
+    }
+    .second_sec_div{
+        flex-basis: 100%;
+        margin: 10px;
+    }
+
+
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .first_sec_div {
+      flex-basis: 100%;
+      margin: 10px;
+    }
+    #sbox p{
+        font-size: 30px
+    }
+    .second_sec_div{
+        flex-basis: 100%;
+        margin: 10px;
+        height: auto;
+    }
+  }  
+  
+  

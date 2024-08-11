@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css style sheet linking -->
+    <link rel="stylesheet" href="contacts.css" />
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>contacts</title>
+</head>
+
+<body>
+    <section id="contact">
+        <!-- first div for contact details -->
+        <div class="details">
+            <h1 style="font-size: 3rem; color: purple">Contacts Us</h1>
+            <div style="margin-top: 25px; width: 100%">
+                <!-- phone -->
+                <div style="display: flex">
+                    <div class="cicon">
+                        <i class="fa-solid fa-phone fa-xl"></i>
+                    </div>
+                    <div class="cbox">
+                        <h4 class="cont" style="color: purple">Call on us:</h4>
+                        <h4 class="cont">Call:+91 1234567891</h4>
+                    </div>
+                </div>
+                <!-- email -->
+                <div class="cont_div">
+                    <div class="cicon">
+                        <i class="fa-solid fa-envelope fa-xl"></i>
+                    </div>
+                    <div class="cbox">
+                        <h4 class="cont" style="color: purple">Email us at:</h4>
+                        <h4 class="cont">Enquiry: contact@Elearntechnolab.com</h4>
+                    </div>
+                </div>
+                <!-- whats app -->
+                <div class="cont_div">
+                    <div class="cicon">
+                        <i class="fa-brands fa-whatsapp fa-xl"></i>
+                    </div>
+                    <div class="cbox">
+                        <h4 class="cont" style="color: purple">Connect us On:</h4>
+                        <h4 class="cont">Whats app</h4>
+                    </div>
+                </div>
+                <!-- google map -->
+                <div class="cont_div">
+                    <div class="cicon">
+                        <i class="fa-solid fa-location-dot fa-xl"></i>
+                    </div>
+                    <div class="cbox">
+                        <h4 class="cont" style="color: purple">Locate us On:</h4>
+                        <h4 class="cont">
+                            <a href="https://maps.app.goo.gl/ic8LnQqCrqQFTA4t7">Google Map</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- second div for enquiry form -->
+        <div class="details">
+            <h1 style="font-size: 40px">How can we be of assistance?</h1>
+            <p style="margin-top: 10px">
+                If you require clarifications on any of the courses or the admission
+                process,<br />
+                we are happy to help
+            </p>
+            <!-- form for enquiry -->
+            <form action="">
+                <input type="text" name="username" placeholder="Name" class="form" />
+                <span class="error" id="name-error"></span>
+                <input type="number" name="number" placeholder="Contact Number" class="form" />
+                <span class="error" id="number-error"></span>
+                <input type="email" name="email_id" placeholder="Email id" class="form" />
+                <span class="error" id="email-error"></span>
+                <input type="text" name="city_name" placeholder="City" class="form" />
+                <span class="error" id="city-error"></span>
+                <textarea class="message_box" name="message" placeholder="Enquiry/Message/Questions" name="" id=""
+                    cols="40" rows="8"></textarea>
+                <span class="error" id="message-error"></span>
+                <button class="button" type="submit">Submit</button>
+            </form>
+
+        </div>
+    </section>
+    <!-- footer, navigation button to home -->
+    <footer>
+        <button class="button" type="button" onclick="location.href='index.html'">
+            ← Home
+        </button>
+    </footer>
+    <script>
+        /* get the form element */
+        const form = document.querySelector('form');
+
+        /* add an event listener for form submission */
+        form.addEventListener('submit', (e) => {
+            /* Prevent the default form submission behavior */
+            e.preventDefault();
+
+            const name = document.querySelector('input[name="username"]').value;
+            const contactNumber = document.querySelector('input[name="number"]').value;
+            const email = document.querySelector('input[name="email_id"]').value;
+            const city = document.querySelector('input[name="city_name"]').value;
+            const message = document.querySelector('textarea[name="message"]').value;
+
+            /* Reset error messages */
+            document.querySelectorAll('.error').forEach((error) => {
+                error.textContent = '';
+            });
+
+            /* Form validation */
+            let isValid = true;
+            if (!name) {
+                document.querySelector('#name-error').textContent = 'Please enter your name';
+                isValid = false;
+            }
+            if (!contactNumber || contactNumber.length !== 10) {
+                document.querySelector('#number-error').textContent = 'Please enter a valid 10-digit contact number';
+                isValid = false;
+            }
+            if (!email || !email.includes('@')) {
+                document.querySelector('#email-error').textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+            if (!city) {
+                document.querySelector('#city-error').textContent = 'Please enter your city';
+                isValid = false;
+            }
+            if (!message) {
+                document.querySelector('#message-error').textContent = 'Please enter a message';
+                isValid = false;
+            }
+
+            /* Check if form is valid */
+            if (!isValid) {
+                return;
+            }
+
+            /* Create a JSON object to send to the server */
+            const data = {
+                name,
+                contactNumber,
+                email,
+                city,
+                message
+            };
+
+            /* Send the data to the server using Fetch API */
+            fetch('http://localhost:4000/details', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Form submitted successfully!');
+                    console.log(data);
+                    form.reset(); // Reset the form data
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+
+
+</body>
+
+</html>

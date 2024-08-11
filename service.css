@@ -1,0 +1,114 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* styling for the header  */
+#logo {
+  font-size: 40px;
+  color: purple;
+}
+
+/* styling for first section */
+#first_sec {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+/* styling for sections div */
+.first_sec_div {
+  flex-basis: 40%;
+  margin: 20px;
+
+  height: auto;
+}
+
+#box1 {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+}
+
+.button {
+  height: 50px;
+  width: 150px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background-color: white;
+  color: purple;
+  font-weight: bolder;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* footer */
+#second_sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#site-search {
+  height: 40px;
+  width: 170px;
+  border-radius: 10px;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#footer h1 {
+  font-size: 30px;
+  color: blueviolet;
+}
+
+#footer p {
+  font-size: 20px;
+  text-align: center;
+}
+
+#footer form button {
+  height: 40px;
+  background-color: green;
+}
+
+
+
+/* responsive */
+@media (max-width: 768px) {
+  .first_sec_div {
+    flex-basis: 100%;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  #logo1 {
+    text-align: center;
+    font-size: 30px !important;
+  }
+
+  .first_sec_div h2 {
+    font-size: 22px
+  }
+
+  #footer h1 {
+    text-align: center;
+  }
+
+  #footer p {
+    text-align: justify;
+    padding: 8px;
+  }
+}

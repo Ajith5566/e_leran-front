@@ -1,0 +1,96 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #B4D6CD;
+}
+
+/* header tag h1 styling */
+header h1 {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    text-decoration: underline;
+}
+
+/* section styling */
+.course {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+/* course deatails container styling */
+.box {
+    flex-basis: 20%;
+    height: auto;
+    width: 100%;
+    background-color: #96CEB4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 30px;
+
+}
+
+.box:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .icon {
+        color: purple;
+    }
+
+    .logo {
+        color: purple;
+    }
+
+}
+
+span {
+    /* Set purple for all span tags */
+    color: purple;
+}
+
+/* footer styling */
+#button {
+    height: 50px;
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: white;
+    color: purple;
+    font-weight: bolder;
+}
+
+footer {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .box {
+        flex-basis: 40%;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        flex-basis: 100%;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .box {
+        flex-basis: 100%;
+        margin: 10px;
+    }
+}

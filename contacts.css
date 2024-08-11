@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* contact section styling */
+#contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.details {
+  flex-basis: 40%;
+  margin: 20px;
+}
+
+
+.cont {
+  font-size: 20px;
+  text-align: start !important;
+}
+
+.cicon {
+  /* stylign for the fontawesome icons */
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cbox {
+  /* styling for the contact deatails */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.cont_div {
+  display: flex;
+  margin-top: 10px;
+}
+
+/* form */
+.form {
+  /* styling for form tag and input */
+  height: 60px;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-indent: 20px;
+  border: 1px solid silver;
+}
+
+.message_box {
+  /*  styling for textarea /message box */
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-indent: 20px;
+  border: 1px solid silver;
+}
+
+.button {
+  /* styling for buttons */
+  height: 50px;
+  width: 150px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background-color: white;
+  color: purple;
+  font-weight: bolder;
+}
+.error{
+  color: red;
+}
+/* responsive */
+@media (max-width: 768px) {
+  .details {
+    flex-basis: 100%;
+
+    p {
+      font-size: 25px;
+      text-align: justify;
+    }
+
+    h4 {
+      font-size: 20px;
+    }
+
+    .form::placeholder {
+      font-size: 20px;
+    }
+
+    .form1::placeholder {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .details {
+    flex-basis: 100%;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
